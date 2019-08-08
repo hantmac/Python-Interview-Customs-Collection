@@ -278,8 +278,7 @@ re.match(r'[+-]?\d+$',a)
 ```python
 s = 'ilovechina'
 x = list(s)
-a = x.reverse()
-''.join(a)
+''.join(x)
 ```
 
 24.Python 中的字符串格式化方式你知道哪些？
