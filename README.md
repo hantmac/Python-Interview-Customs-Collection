@@ -2,7 +2,7 @@
 秋招的小伙伴，有面Python开发方向的，看这一个repo就够啦😘
 ### 语言特性
 
-1.谈谈对 Python 和其他语言的区别
+1.**谈谈对 Python 和其他语言的区别**
 
 ```markdown
 Python属于解释型语言，当程序运行时，是一行一行的解释，并运行，所以调式代码很方便，开发效率高，
@@ -21,14 +21,14 @@ Python属于解释型语言，当程序运行时，是一行一行的解释，�
 - Python弱类型
 ```
 
-2.简述解释型和编译型编程语言
+2.**简述解释型和编译型编程语言**
 
 ```markdown
 解释型：就是边解释边执行（Python，php）
 编译型：编译后再执行（c、java、c#）
 ```
 
-3.Python 的解释器种类以及相关特点？
+3.**Python 的解释器种类以及相关特点？**
 
 ```markdown
 CPython
@@ -53,7 +53,7 @@ IronPython和Jython类似，只不过IronPython是运行在.Net平台上的Pytho
 　　Python的解释器很多，但使用最广泛的还是CPython。如果要和Java或.Net平台交互，最好的办法不是用Jython或IronPython，而是通过网络调用来交互，确保各程序之间的独立性。
 ```
 
-4.说说你知道的Python3 和 Python2 之间的区别？
+4.**说说你知道的Python3 和 Python2 之间的区别？**
 
 ```markdown
 1：打印时，py2需要可以不需要加括号，py3 需要
@@ -109,13 +109,13 @@ py3：range  统一使用range，Python3中range的机制也进行修改并提�
 13：file函数被Python3废弃，统一使用open来处理文件，可以通过io.IOBase检查文件类型
 ```
 
-5.Python3 和 Python2 中 int 和 long 区别？
+5.**Python3 和 Python2 中 int 和 long 区别？**
 
 ```markdown
 在python3里，只有一种整数类型int,大多数情况下，和python２中的长整型类似。
 ```
 
-6.xrange 和 range 的区别？
+6.**xrange 和 range 的区别？**
 
 ```markdown
 xrange用法与range完全相同，所不同的是生成的不是一个数组，而是一个生成器。
@@ -128,7 +128,7 @@ xrange用法与range完全相同，所不同的是生成的不是一个数组，
 
 ### 编码规范
 
-7.什么是 PEP8?
+7.**什么是 PEP8?**
 
 ```markdown
 PEP是 Python Enhancement Proposal 的缩写，翻译过来就是 Python增强建议书
@@ -137,20 +137,20 @@ PEP是 Python Enhancement Proposal 的缩写，翻译过来就是 Python增强�
 https://www.python.org/dev/peps/pep-0008/
 ```
 
-8.了解 Python 之禅么？
+8.**了解 Python 之禅么？**
 
 ```markdown
 import this
 ```
 
-9.了解 dosctring 么？
+9.**了解 dosctring 么？**
 
 ```markdown
 Python有一个很奇妙的特性，称为 文档字符串 ，它通常被简称为 docstrings 。DocStrings是一个重要的工具，由于它帮助你的程序文档更加简单易懂，你应该尽量使用它。你甚至可以在程序运行的时候，从函数恢复文档字符串。
 使用魔法方法'__doc__'可以打印docstring的内容
 ```
 
-10.了解类型注解么？
+10.**了解类型注解么？**
 
 ```markdown
 def add(x:int, y:int) -> int:
@@ -158,7 +158,7 @@ def add(x:int, y:int) -> int:
 用 : 类型 的形式指定函数的参数类型，用 -> 类型 的形式指定函数的返回值类型
 ```
 
-11.例举你知道 Python 对象的命名规范，例如方法或者类等
+11.**例举你知道 Python 对象的命名规范，例如方法或者类等**
 
 ```
 类名都使用首字母大写开头(Pascal命名风格)的规范；
@@ -169,13 +169,13 @@ def add(x:int, y:int) -> int:
 
 ```
 
-12.Python 中的注释有几种？
+12.**Python 中的注释有几种？**
 
 ```markdown
 单行注释，多行注释，docstring注释
 ```
 
-13.如何优雅的给一个函数加注释？
+13.**如何优雅的给一个函数加注释？**
 
 ```markdown
 在函数逻辑行的首行使用""" xxx """给函数添加注释，注释中可包含函数参数的说明，返回值说明等
@@ -187,7 +187,7 @@ def foo(bar):
     return bar
 ```
 
-14.如何给变量加注释？
+14.**如何给变量加注释？**
 
 ```python
 参数注释：以冒号（:）标记
@@ -197,26 +197,26 @@ def add(x:int, y:int) -> int:
     return x + y
 ```
 
-15.Python 代码缩进中是否支持 Tab 键和空格混用。
+15.**Python 代码缩进中是否支持 Tab 键和空格混用。**
 
 ```markdown
 支持，Python 并没有强制要求你用Tab缩进或者用空格缩进，但在 PEP8中，建议使用4个空格来缩进
 ```
 
-16.是否可以在一句 import 中导入多个库?
+16.**是否可以在一句 import 中导入多个库?**
 
 ```python
 可以的
 import json,random,requests
 ```
 
-17.在给 Py 文件命名的时候需要注意什么?
+17.**在给 Py 文件命名的时候需要注意什么?**
 
 ```markdown
 全小写，单词之间使用下划线分隔
 ```
 
-18.例举几个规范 Python 代码风格的工具
+18.**例举几个规范 Python 代码风格的工具**
 
 ```markdown
 pylint,black,pycharm也带有pep8的代码规范工具
@@ -228,7 +228,7 @@ pylint,black,pycharm也带有pep8的代码规范工具
 
 #### 字符串
 
-19.列举 Python 中的基本数据类型？
+19.**列举 Python 中的基本数据类型？**
 
 ```markdown
 Python3 中有六个标准的数据类型：
@@ -245,7 +245,7 @@ Python3 的六个标准数据类型中：
 可变数据（3 个）：List（列表）、Dictionary（字典）、Set（集合）。
 ```
 
-20.如何区别可变数据类型和不可变数据类型
+20.**如何区别可变数据类型和不可变数据类型**
 
 ```markdown
 Python3 的六个标准数据类型中：
@@ -254,14 +254,14 @@ Python3 的六个标准数据类型中：
 可变数据（3 个）：List（列表）、Dictionary（字典）、Set（集合）。
 ```
 
-21.将"hello world"转换为首字母大写"Hello World"
+21.**将"hello world"转换为首字母大写"Hello World"**
 
 ```python
 z = 'hello world'
 [s.capitalize() for s in z.split(' ')]
 ```
 
-22.如何检测字符串中只含有数字?
+22.**如何检测字符串中只含有数字?**
 
 ```python
 # 分为两种情况
@@ -273,7 +273,7 @@ import re
 re.match(r'[+-]?\d+$',a)
 ```
 
-23.将字符串"ilovechina"进行反转
+23.**将字符串"ilovechina"进行反转**
 
 ```python
 s = 'ilovechina'
@@ -281,7 +281,7 @@ x = list(s)
 ''.join(x)
 ```
 
-24.Python 中的字符串格式化方式你知道哪些？
+24.**Python 中的字符串格式化方式你知道哪些？**
 
 ```python
 # Python3.6之后的版本提供了三种字符串格式化的方式
@@ -296,14 +296,14 @@ def foo(name):
   return f'hello {name}'
 ```
 
-25.有一个字符串开头和末尾都有空格，比如“ adabdw ”,要求写一个函数把这个字符串的前后空格都去掉。
+25.**有一个字符串开头和末尾都有空格，比如“ adabdw ”,要求写一个函数把这个字符串的前后空格都去掉。**
 
 ```python
 s = " adabdw "
 s.strip()
 ```
 
-26.获取字符串”123456“最后的两个字符。
+26.**获取字符串”123456“最后的两个字符。**
 
 ```python
 s = '123456'
@@ -311,13 +311,13 @@ s = '123456'
 print(s[-2:])
 ```
 
-27.一个编码为 GBK 的字符串 S，要将其转成 UTF-8 编码的字符串，应如何操作？
+27.**一个编码为 GBK 的字符串 S，要将其转成 UTF-8 编码的字符串，应如何操作？**
 
 ```python
 s.encode('utf-8')
 ```
 
-28.s="info:xiaoZhang 33 shandong",用正则切分字符串输出['info', 'xiaoZhang', '33', 'shandong']
+28.**s="info:xiaoZhang 33 shandong",用正则切分字符串输出['info', 'xiaoZhang', '33', 'shandong']**
 
 ```python
 import re
@@ -325,14 +325,14 @@ s="info:xiaoZhang 33 shandong"
 re.split(r'[:\s]',s)
 ```
 
-27.怎样将字符串转换为小写？
+27.**怎样将字符串转换为小写？**
 
 ```python
 b = 'HHH'
 b.lower()
 ```
 
-28.单引号、双引号、三引号的区别？
+28.**单引号、双引号、三引号的区别？**
 
 ```python
 s = 'hello'
@@ -341,7 +341,7 @@ s= "hello"
 三引号可以用来加注释，所加注释可以使用__doc__查看
 ```
 
-29.a = "你好     中国  ",去除多余空格只留一个空格。
+29.**a = "你好     中国  ",去除多余空格只留一个空格。**
 
 ```python
 a = "你好     中国  "
@@ -352,21 +352,21 @@ s = ' '.join(a.strip().split())
 
 #### 列表
 
-30.已知 AList = [1,2,3,1,2],对 AList 列表元素去重，写出具体过程。
+30.**已知 AList = [1,2,3,1,2],对 AList 列表元素去重，写出具体过程。**
 
 ```python
 a_list = [1,2,3,1,2]
 ss = set(a_list)
 ```
 
-31.如何实现 "1,2,3" 变成 ["1","2","3"]
+31.**如何实现 "1,2,3" 变成 ["1","2","3"]**
 
 ```python
 s = "1,2,3"
 s.split(',')
 ```
 
-32.给定两个 list，A 和 B，找出相同元素和不同元素
+32.**给定两个 list，A 和 B，找出相同元素和不同元素**
 
 ```python
 # 最直接的方法
@@ -394,14 +394,14 @@ print(set1&set2)
 print(set1^set2)
 ```
 
-33.[[1,2],[3,4],[5,6]]一行代码展开该列表，得出[1,2,3,4,5,6]
+33.**[[1,2],[3,4],[5,6]]一行代码展开该列表，得出[1,2,3,4,5,6]**
 
 ```python
 mm = [[1,2],[3,4],[5,6]]
 [j for a in mm for j in a]
 ```
 
-34.合并列表[1,5,7,9]和[2,2,6,8]
+34.**合并列表[1,5,7,9]和[2,2,6,8]**
 
 ```python
 a = [1,5,7,9]
@@ -412,7 +412,7 @@ a.extend(b)
 a[0:0] = b
 ```
 
-35.如何打乱一个列表的元素？
+35.**如何打乱一个列表的元素？**
 
 ```python
 import random
@@ -424,14 +424,14 @@ random.shuffle(a)
 
 #### 字典
 
-36.字典操作中 del 和 pop 有什么区别
+36.**字典操作中 del 和 pop 有什么区别**
 
 ```markdown
 del 操作删除键值对，不返回值；
 pop 操作删除键值对的同时，返回键所对应的值。
 ```
 
-37.按照字典的内的年龄排序
+37.**按照字典的内的年龄排序**
 
 ```Python
 d1 = [
@@ -445,7 +445,7 @@ d1 = [
 sorted(d1,key=lambda x:x['age'])
 ```
 
-38.请合并下面两个字典 a = {"A":1,"B":2},b = {"C":3,"D":4}
+38.**请合并下面两个字典 a = {"A":1,"B":2},b = {"C":3,"D":4}**
 
 ```python
 # python3合并字典有三种方式
@@ -461,13 +461,13 @@ c = dict(a,**b)
 c = {**a,**b} # 官方推荐这种方式
 ```
 
-39.如何使用生成式的方式生成一个字典，写一段功能代码。
+39.**如何使用生成式的方式生成一个字典，写一段功能代码。**
 
 ```python
 {x:x*x for x in range(6)}
 ```
 
-40.如何把元组("a","b")和元组(1,2)，变为字典{"a":1,"b":2}
+40.**如何把元组("a","b")和元组(1,2)，变为字典{"a":1,"b":2}**
 
 ```python
 a = ('a','b')
@@ -480,13 +480,13 @@ c = dict(z)
 
 #### 综合
 
-41.Python 常用的数据结构的类型及其特性？
+41.**Python 常用的数据结构的类型及其特性？**
 
 ```markdown
 List,tuple,dict,set是比较常用的数据结构，queue,heap,deque,ProrityQueue，multiprocessing.Queue等进阶的数据结构类型。特性就去查查吧，写在这里太长了。
 ```
 
-42.如何将元组("A","B")和元组(1,2),合并成字典{"A":1,"B":2}
+42.**如何将元组("A","B")和元组(1,2),合并成字典{"A":1,"B":2}**
 
 ```Python
 a = ('A','B')
@@ -495,33 +495,33 @@ z=zip(a,b)
 c = dict(z)
 ```
 
-43.Python 里面如何实现 tuple 和 list 的转换？
+43.**Python 里面如何实现 tuple 和 list 的转换？**
 
 ```python
 tuple(list) # tuple转list
 list(tuple) # list 转tuple
 ```
 
-44.我们知道对于列表可以使用切片操作进行部分元素的选择，那么如何对生成器类型的对象实现相同的功能呢？
+44.**我们知道对于列表可以使用切片操作进行部分元素的选择，那么如何对生成器类型的对象实现相同的功能呢？**
 
 ```python
 使用自带的itertools库进行实现，具体实现方式 itertools.islice(生成器对象，起始位置，结束位置)，即可实现切片功能。
 ```
 
-45.请将[i for i in range(3)]改成生成器
+45.**请将[i for i in range(3)]改成生成器**
 
 ```python
 (i for i in range(3))
 ```
 
-46.a="hello"和 b="你好"编码成 bytes 类型
+46.**a="hello"和 b="你好"编码成 bytes 类型**
 
 ```python
 a.encode()
 b.encode()
 ```
 
-47.下面的代码输出结果是什么？
+47.**下面的代码输出结果是什么？**
 
 ```Python
 a = (1,2,3,[4,5,6,7],8)
@@ -529,7 +529,7 @@ a[2] = 2
 报错，元组是不可变对象，不支持修改
 ```
 
-48.下面的代码输出的结果是什么?
+48.**下面的代码输出的结果是什么?**
 
 ```Python
 a = (1,2,3,[4,5,6,7],8)
@@ -539,31 +539,31 @@ a[5] = 2
 
 ### 操作类题目
 
-49.Python 交换两个变量的值
+49.**Python 交换两个变量的值**
 
 ```python
 a,b = b,a
 ```
 
-50.在读文件操作的时候会使用 read、readline 或者 readlines，简述它们各自的作用
+50.**在读文件操作的时候会使用 read、readline 或者 readlines，简述它们各自的作用**
 
 ```python
 read将整个文本都读取为一个字符串，占用内存大，readline读取为一个生成器，支持遍历和迭代，占用空间小。readlines将文本读取为列表，占用空间大
 ```
 
-51.json 序列化时，可以处理的数据类型有哪些？如何定制支持 datetime 类型？
+51.**json 序列化时，可以处理的数据类型有哪些？如何定制支持 datetime 类型？**
 
 ```markdown
 字符串、数字（整数和浮点数）、字典、列表、布尔值、None。使用strftime将datetime格式化为标准字符串类型即可。
 ```
 
-52.json 序列化时，默认遇到中文会转换成 unicode，如果想要保留中文怎么办？
+52.**json 序列化时，默认遇到中文会转换成 unicode，如果想要保留中文怎么办？**
 
 ```
 使用json.dumps函数时，添加参数ensure_ascii=False，如果想显示的更美观，可以添加indent=2参数，会在每个key值前添加两个空格。
 ```
 
-53.有两个磁盘文件 A 和 B，各存放一行字母，要求把这两个文件中的信息合并(按字母顺序排列)，输出到一个新文件 C 中。
+53.**有两个磁盘文件 A 和 B，各存放一行字母，要求把这两个文件中的信息合并(按字母顺序排列)，输出到一个新文件 C 中。**
 
 ```python
 with open('A.txt','r') as f:
@@ -576,7 +576,7 @@ with open('C.txt','w') as f:
         f.write(i)
 ```
 
-54.如果当前的日期为 20190530，要求写一个函数输出 N 天后的日期，(比如 N 为 2，则输出 20190601)。
+54.**如果当前的日期为 20190530，要求写一个函数输出 N 天后的日期，(比如 N 为 2，则输出 20190601)。**
 
 ```python
 import datetime
@@ -588,7 +588,7 @@ def getday(n):
     return target_date
 ```
 
-55.写一个函数，接收整数参数 n，返回一个函数，函数的功能是把函数的参数和 n 相乘并把结果返回。
+55.**写一个函数，接收整数参数 n，返回一个函数，函数的功能是把函数的参数和 n 相乘并把结果返回。**
 
 ```python
 def mul(n):
@@ -599,7 +599,7 @@ def mul(n):
  # 闭包的基本操作
 ```
 
-56.下面代码会存在什么问题，如何改进？
+56.**下面代码会存在什么问题，如何改进？**
 
 ```Python
 def strappend(num):
@@ -610,13 +610,13 @@ def strappend(num):
   # 将str(i)改为str[i]
 ```
 
-57.一行代码输出 1-100 之间的所有偶数。
+57.**一行代码输出 1-100 之间的所有偶数。**
 
 ```python
 [x for x in range(101) if x %2 ==0]
 ```
 
-58.with 语句的作用，写一段代码？
+58.**with 语句的作用，写一段代码？**
 
 ```python
 # with语句用来管理资源，及时关闭文件等操作，避免资源的泄漏
@@ -624,14 +624,14 @@ with open('a.txt','r') as f:
     f.read()
 ```
 
-59.python 字典和 json 字符串相互转化方法
+59.**python 字典和 json 字符串相互转化方法**
 
 ```python
 json.dumps()   将Python中的对象转换为JSON中的字符串对象
 json.loads()   将JSON中的字符串对象转换为Python中的对象
 ```
 
-60.请写一个 Python 逻辑，计算一个文件中的大写字母数量
+60.**请写一个 Python 逻辑，计算一个文件中的大写字母数量**
 
 ```python
 import re
@@ -644,7 +644,7 @@ with open('a.txt','r') as f:
 
 ### 高级特效
 
-70.函数装饰器有什么作用？请列举说明？
+70.**函数装饰器有什么作用？请列举说明？**
 
 ```python
 函数装饰器可以在不修改原函数的条件下，为原函数添加额外的功能，例如记录日志，运行性能，缓存等
@@ -660,7 +660,7 @@ def time_it(func):
     
 ```
 
-71.Python 垃圾回收机制？
+71.**Python 垃圾回收机制？**
 
 ```python
 引用计数机制：
@@ -686,7 +686,7 @@ PyObject是每个对象必有的内容，其中ob_refcnt就是做为引用计数
 
 ```
 
-72.魔法函数 __call__怎么使用?
+72.**魔法函数 __call__怎么使用?**
 
 ```python
 class Bar:
@@ -721,13 +721,13 @@ def hello():
     print("Hello")
 ```
 
-73.如何判断一个对象是函数还是方法？
+73.**如何判断一个对象是函数还是方法？**
 
 ```Python
 判断对象是函数或方法应该使用type(obj)
 ```
 
-74.@classmethod 和@staticmethod 用法和区别
+74.**@classmethod 和@staticmethod 用法和区别**
 
 ```python
 一般来说，要使用某个类的方法，需要先实例化一个对象再调用方法。
@@ -766,7 +766,7 @@ A.static_foo()
 A.class_foo()
 ```
 
-75.Python 中的接口如何实现？
+75.**Python 中的接口如何实现？**
 
 ```python
 #抽象类加抽象方法就等于面向对象编程中的接口
@@ -791,7 +791,7 @@ class RelalizeInterfaceLee(interface):#必须实现interface中的所有函数�
         pass   
 ```
 
-76.Python 中的反射了解么?
+76.**Python 中的反射了解么?**
 
 ```python
 通过字符串映射object对象的方法或者属性
@@ -829,13 +829,13 @@ else:
     print("你的请求方式有误...")
 ```
 
-77.metaclass 作用？以及应用场景？
+77.**metaclass 作用？以及应用场景？**
 
 ```
 metaclass我没怎么用过，不能乱说误人子弟，可以看下这篇博文https://www.cnblogs.com/xybaby/p/7927407.html
 ```
 
-78.hasattr() getattr() setattr()的用法
+78.**hasattr() getattr() setattr()的用法**
 
 ```python
 hasattr(obj,name_str): 判断objec是否有name_str这个方法或者属性
@@ -844,7 +844,7 @@ setattr(obj,name_str,value): 为object对象设置一个以name_str为名的valu
 delattr(obj,name_str): 删除object对象中的name_str方法或者属性
 ```
 
-79.请列举你知道的 Python 的魔法方法及用途。
+79.**请列举你知道的 Python 的魔法方法及用途。**
 
 ```
 1. __call__:允许一个类的实例像函数一样被调用。实质上说，这意味着 x() 与 x._call_() 是相同的
@@ -853,26 +853,26 @@ delattr(obj,name_str): 删除object对象中的name_str方法或者属性
 再就是__setattr__,__getattr__,__delattr__等等
 ```
 
-80.如何知道一个 Python 对象的类型？
+80.**如何知道一个 Python 对象的类型？**
 
 ```
 type(obj)
 ```
 
-81.Python 的传参是传值还是传址？
+81.**Python 的传参是传值还是传址？**
 
 ```
 说传值或者传引用都不准确。非要安一个确切的叫法的话，叫传对象（call by object）
 具体可以参考这篇文章：https://foofish.net/python-function-args.html
 ```
 
-82.Python 中的元类(metaclass)使用举例
+82.**Python 中的元类(metaclass)使用举例**
 
 ```
 参考77.
 ```
 
-83.简述 any()和 all()方法
+83.**简述 any()和 all()方法**
 
 ```python
 #any(x)判断x对象是否为空对象，如果都为空、0、false，则返回false，如果不都为空、0、false，则返回true
@@ -923,25 +923,25 @@ True
 >>> #注意：空元组、空列表返回值为True，这里要特别注意
 ```
 
-84.filter 方法求出列表所有奇数并构造新列表，a =  [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+84.**filter 方法求出列表所有奇数并构造新列表，a =  [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]**
 
 ```python
 list(filter(lambda x: x%2==1,a))
 ```
 
-85.什么是猴子补丁？
+85.**什么是猴子补丁？**
 
 ```markdown
 猴子补丁是一个概念，不是python中发明的，其他动态语言也有这么个概念。 《松本行弘的程序世界》这本书，里面专门有一章讲了猴子补丁的设计，所谓的猴子补丁的含义是指在动态语言中，不去改变源码而对功能进行追加和变更
 ```
 
-86.在 Python 中是如何管理内存的？
+86.**在 Python 中是如何管理内存的？**
 
 ```
 参考71.
 ```
 
-87.当退出 Python 时是否释放所有内存分配？
+87.**当退出 Python 时是否释放所有内存分配？**
 
 ```
 答案是否定的。那些具有对象循环引用或者全局命名空间引用的变量，在 Python 退出是往往不会被释放
@@ -952,7 +952,7 @@ list(filter(lambda x: x%2==1,a))
 
 ### 正则表达式
 
-88.使用正则表达式匹配```<html><h1>www.baidu.com</html>```中的地址
+88.**使用正则表达式匹配```<html><h1>www.baidu.com</html>```中的地址**
 
 ```python
 import re
@@ -970,13 +970,13 @@ pa = re.compile(r'\d+')
 re.sub(pa,'100',a)
 ```
 
-89.正则表达式匹配中(.*)和(.**?)匹配区别？
+89.**正则表达式匹配中(.*)和(.**?)匹配区别？**
 
 ```
 加？会将贪婪模式改成懒惰模式,如果有问号的话，则表示匹配0个或1个问号前面的表达式
 ```
 
-90.写一段匹配邮箱的正则表达式
+90.**写一段匹配邮箱的正则表达式**
 
 ```python
 r'[0-9a-zA-Z_]*@.+\.(com|cn|net)$'
@@ -986,7 +986,7 @@ r'[0-9a-zA-Z_]*@.+\.(com|cn|net)$'
 
 ### 其他内容
 
-91.解释一下 python 中 pass 语句的作用？
+91.**解释一下 python 中 pass 语句的作用？**
 
 ```markdown
 Python pass 是空语句，是为了保持程序结构的完整性。
@@ -994,13 +994,13 @@ Python pass 是空语句，是为了保持程序结构的完整性。
 pass 不做任何事情，一般用做占位语句。
 ```
 
-92.简述你对 input()函数的理解
+92.**简述你对 input()函数的理解**
 
 ```
 在python3中，input()获取用户输入，不论用户输入的是什么，获取到的都是字符串类型的。
 ```
 
-93.python 中的 is 和==
+93.**python 中的 is 和==**
 
 ```markdown
 is比较的是两个对象的id值是否相等，也就是比较两个对象是否为同一个实例对象，是否指向同一个内存地址。
@@ -1008,7 +1008,7 @@ is比较的是两个对象的id值是否相等，也就是比较两个对象是�
 ==比较的是两个对象的内容是否相等，默认会调用对象的__eq__()方法。
 ```
 
-94.Python 中的作用域
+94.**Python 中的作用域**
 
 ```python
 L （Local） 局部作用域
@@ -1017,14 +1017,14 @@ G （Global） 全局作用域
 B （Built-in） 内建作用域
 ```
 
-95.三元运算写法和应用场景？
+95.**三元运算写法和应用场景？**
 
 ```python
 条件语句比较简单时可以使用三元运算符，最常见的就是 
 res = 'test True' if expression is True else 'test False'
 ```
 
-96.了解 enumerate 么？
+96.**了解 enumerate 么？**
 
 ```python
 # 遍历列表时候，携带索引index
@@ -1033,19 +1033,19 @@ for index,item in a:
     print(index,item)
 ```
 
-97.列举 5 个 Python 中的标准模块
+97.**列举 5 个 Python 中的标准模块**
 
 ```python
 json,re,random,datetime,codecs
 ```
 
-98.如何在函数中设置一个全局变量
+98.**如何在函数中设置一个全局变量**
 
 ```Python
 使用global关键字
 ```
 
-99.pathlib 的用法举例
+99.**pathlib 的用法举例**
 
 ```python
 from pathlib import Path
@@ -1059,7 +1059,7 @@ f = open(file_to_open)
 print(f.read())
 ```
 
-100.Python 中的异常处理，写一个简单的应用场景
+100.**Python 中的异常处理，写一个简单的应用场景**
 
 ```Python
 class NameTooShortError(ValueError): 
@@ -1071,7 +1071,7 @@ def validate(name):
 # 使用自定义异常类，使得发生异常时的错误更容易排查
 ```
 
-101.Python 中递归的最大次数，那如何突破呢？
+101.**Python 中递归的最大次数，那如何突破呢？**
 
 ```pyhton
 python解释器限制最大的递归深度是999，可以通过
@@ -1080,13 +1080,13 @@ sys.setrecursionlimit(10000)  # set the maximum depth as 10000
 重新设置最大递归深度
 ```
 
-102.什么是面向对象的 mro
+102.**什么是面向对象的 mro**
 
 ```
 对于支持继承的编程语言来说，其方法（属性）可能定义在当前类，也可能来自于基类，所以在方法调用时就需要对当前类和基类进行搜索以确定方法所在的位置。而搜索的顺序就是所谓的「方法解析顺序」（Method Resolution Order，或MRO）。对于只支持单继承的语言来说，MRO 一般比较简单；而对于 Python 这种支持多继承的语言来说，MRO 就复杂很多。
 ```
 
-103.isinstance 作用以及应用场景？
+103.**isinstance 作用以及应用场景？**
 
 ```python
 来判断一个对象是否是一个已知的类型
@@ -1096,13 +1096,13 @@ sys.setrecursionlimit(10000)  # set the maximum depth as 10000
  True
 ```
 
-104.什么是断言？应用场景？
+104.**什么是断言？应用场景？**
 
 ```python
 Python 的断言语句是一种调试工具，用来测试某个断言条件。如果断言条件 为真，则程序将继续正常执行;但如果条件为假，则会引发 AssertionError 异常并显示相关 的错误消息。
 ```
 
-105.lambda 表达式格式以及应用场景？
+105.**lambda 表达式格式以及应用场景？**
 
 ```python
 d = {'a':2,'b':1,'c':3,'d':'4'}
@@ -1110,26 +1110,26 @@ sorted(d,key=lambda x :x[1])
 # 将字典d按照值排序
 ```
 
-106.新式类和旧式类的区别
+106.**新式类和旧式类的区别**
 
 ```
 Python 有两种类：经典类（classic class）和新式类（new-style class）。两者的不同之处在于新式类继承自 object。在 Python 2.1 以前，经典类是唯一可用的形式；Python 2.2 引入了新式类，使得类和内置类型更加统一；在 Python 3 中，新式类是唯一支持的类。
 ```
 
-107.dir()是干什么用的？
+107.**dir()是干什么用的？**
 
 ```
 dir() 函数不带参数时，返回当前范围内的变量、方法和定义的类型列表；带参数时，返回参数的属性、方法列表。如果参数包含方法__dir__()，该方法将被调用。如果参数不包含__dir__()，该方法将最大限度地收集参数信息。
 ```
 
-108.一个包里有三个模块，demo1.py, demo2.py, demo3.py，但使用 from tools import *导入模块时，如何保证只有 demo1、demo3 被导入了。*
+108.**一个包里有三个模块，demo1.py, demo2.py, demo3.py，但使用 from tools import *导入模块时，如何保证只有 demo1、demo3 被导入了。**
 
 ```python
 但若想使用from pacakge_1 import *这种形式的写法，需在  init.py中加上：   all = [‘file_a’, ‘file_b’] #package_1下有file_a.py和file_b.py，在导入时init.py文件将被执行。 
 但不建议在 init.py中写模块，以保证该文件简单。不过可在init.py导入我们需要的模块，以便避免一个个导入、方便使用。
 ```
 
-109.列举 5 个 Python 中的异常类型以及其含义
+109.**列举 5 个 Python 中的异常类型以及其含义**
 
 ```
 1. ArithmeticError 此基类用于派生针对各种算术类错误而引发的内置异常: OverflowError, ZeroDivisionError, FloatingPointError
@@ -1139,7 +1139,7 @@ dir() 函数不带参数时，返回当前范围内的变量、方法和定义�
 5. IndexError 当序列抽取超出范围时将被引发。 （切片索引会被静默截短到允许的范围；如果指定索引不是整数则 TypeError 会被引发
 ```
 
-110.copy 和 deepcopy 的区别是什么？
+110.**copy 和 deepcopy 的区别是什么？**
 
 ```python
 copy 即所谓的浅拷贝，赋值的时候非递归地复制子对象的引用；
@@ -1159,13 +1159,13 @@ print(zs)
 
 ```
 
-111.代码中经常遇到的*args, **kwargs 含义及用法。
+111.**代码中经常遇到的*args, **kwargs 含义及用法。**
 
 ```
 这两个是python中的可变参数。*args表示任何多个位置参数，它是一个tuple；**kwargs表示关键字参数，它是一个dict。并且同时使用*args和**kwargs时，必须*args参数列要在**kwargs前
 ```
 
-112.Python 中会有函数或成员变量包含单下划线前缀和结尾，和双下划线前缀结尾，区别是什么?
+112.**Python 中会有函数或成员变量包含单下划线前缀和结尾，和双下划线前缀结尾，区别是什么?**
 
 ```python
 前置单下划线_var:命名约定，用来表示该名称仅在内部使用。一般对 Python 解释器没 有特殊含义(通配符导入除外)，只能作为对程序员的提示。
@@ -1175,7 +1175,7 @@ print(zs)
 使用这种命名方式。
 ```
 
-113.w、a+、wb 文件写入模式的区别
+113.**w、a+、wb 文件写入模式的区别**
 
 ```
 w:写入时会覆盖上一次的写入
@@ -1183,13 +1183,13 @@ a+:追加写入
 wb:以二进制文件形式写入
 ```
 
-114.举例 sort 和 sorted 的区别
+114.**举例 sort 和 sorted 的区别**
 
 ```
 sort()与sorted()的不同在于，sort是在原位重新排列列表，而sorted()是产生一个新的列表
 ```
 
-115.什么是负索引？
+115.**什么是负索引？**
 
 ```
 负索引和正索引不同，它是从右边开始检索。例如：使用负索引取出列表的最后一个数
@@ -1197,13 +1197,13 @@ lis[-1] # 取出列表的最后一个元素
 lis[-2] # 取出列表的倒数第二个元素
 ```
 
-116.pprint 模块是干什么的？
+116.**pprint 模块是干什么的？**
 
 ```
 print()和pprint()都是python的打印模块，功能基本一样，唯一的区别就是pprint()模块打印出来的数据结构更加完整，每行为一个数据结构，更加方便阅读打印输出结果。特别是对于特别长的数据打印，print()输出结果都在一行，不方便查看，而pprint()采用分行打印输出，所以对于数据结构比较复杂、数据长度较长的数据，适合采用pprint()打印方式
 ```
 
-117.解释一下 Python 中的赋值运算符
+117.**解释一下 Python 中的赋值运算符**
 
 ```
 在python中，使用 = 可以给变量赋值。
@@ -1212,13 +1212,13 @@ print()和pprint()都是python的打印模块，功能基本一样，唯一的�
 
 ```
 
-118.解释一下 Python 中的逻辑运算符
+118.**解释一下 Python 中的逻辑运算符**
 
 ```
 and, or, not
 ```
 
-119.讲讲 Python 中的位运算符
+119.**讲讲 Python 中的位运算符**
 
 ```
 &	按位与运算符：参与运算的两个值,如果两个相应位都为1,则该位的结果为1,否则为0	(a & b) 输出结果 12 ，二进制解释： 0000 1100
@@ -1229,7 +1229,7 @@ and, or, not
 >>	右移动运算符：把”>>”左边的运算数的各二进位全部右移若干位，”>>”右边的数指定移动的位数	a >> 2 输出结果 15 ，二进制解释： 0000 1111
 ```
 
-120.在 Python 中如何使用多进制数字？
+120.**在 Python 中如何使用多进制数字？**
 
 ```
 1、二进制数字由0和1组成，我们使用0b或0B前缀表示二进制数
@@ -1248,7 +1248,7 @@ print(hex(15))#0xf
  
 ```
 
-121.怎样声明多个变量并赋值？
+121.**怎样声明多个变量并赋值？**
 
 ```python
 a,b = 1,2
@@ -1340,32 +1340,4 @@ BSet = {1,2,3}
 
 156.TCP 和 UDP 的区别？
 
-157.简要介绍三次握手和四次挥手
-
-158.什么是粘包？ socket 中造成粘包的原因是什么？ 哪些情况会发生粘包现象？
-
-### 并发
-
-159.举例说明 conccurent.future 的中线程池的用法
-
-160.说一说多线程，多进程和协程的区别。
-
-161.简述 GIL
-
-162.进程之间如何通信
-
-163.IO 多路复用的作用？
-
-164.select、poll、epoll 模型的区别？
-
-165.什么是并发和并行？
-
-167.解释什么是异步非阻塞？
-
-168.threading.local 的作用？
-
-### Git 面试题
-
-169.说说你知道的 git 命令
-
-170.git 如何查看某次提交修改的内容x
+157.简要介绍三次握手和
