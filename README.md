@@ -646,21 +646,203 @@ with open('a.txt','r') as f:
 
 70.函数装饰器有什么作用？请列举说明？
 
+```python
+函数装饰器可以在不修改原函数的条件下，为原函数添加额外的功能，例如记录日志，运行性能，缓存等
+以记录函数运行时间为例，实现一个装饰器
+import time
+def time_it(func):
+    def wrapper(func):
+        start_time = time.time()
+        res = func()
+        end_time = time.time()
+        return start_time - end_time
+    return wrapper
+    
+```
+
 71.Python 垃圾回收机制？
+
+```python
+引用计数机制：
+python里每一个东西都是对象，它们的核心就是一个结构体：PyObject
+ typedef struct_object {
+ int ob_refcnt;
+ struct_typeobject *ob_type;
+} PyObject;
+
+PyObject是每个对象必有的内容，其中ob_refcnt就是做为引用计数。当一个对象有新的引用时，它的ob_refcnt就会增加，当引用它的对象被删除，它的ob_refcnt就会减少
+#define Py_INCREF(op)   ((op)->ob_refcnt++) //增加计数
+#define Py_DECREF(op) \ //减少计数
+    if (--(op)->ob_refcnt != 0) \
+        ; \
+    else \
+        __Py_Dealloc((PyObject *)(op))
+
+当引用计数为0时，该对象生命就结束了。
+引用计数机制的优点：
+
+简单
+实时性：一旦没有引用，内存就直接释放了。不用像其他机制等到特定时机。实时性还带来一个好处：处理回收内存的时间分摊到了平时
+
+```
 
 72.魔法函数 __call__怎么使用?
 
+```python
+class Bar:
+    def __call__(self, *args, **kwargs):
+        print('i am instance method')
+
+b = Bar()  # 实例化
+b()  # 实例对象b 可以作为函数调用 等同于b.__call__ 使用
+
+
+# OUT: i am instance method
+
+
+
+# 带参数的类装饰器
+class Bar:
+
+    def __init__(self, p1):
+        self.p1 = p1
+
+    def __call__(self, func):
+        def wrapper():
+            print("Starting", func.__name__)
+            print("p1=", self.p1)
+            func()
+            print("Ending", func.__name__)
+        return wrapper
+
+
+@Bar("foo bar")
+def hello():
+    print("Hello")
+```
+
 73.如何判断一个对象是函数还是方法？
+
+```Python
+判断对象是函数或方法应该使用type(obj)
+```
 
 74.@classmethod 和@staticmethod 用法和区别
 
+```python
+一般来说，要使用某个类的方法，需要先实例化一个对象再调用方法。
+
+而使用@staticmethod或@classmethod，就可以不需要实例化，直接类名.方法名()来调用。
+
+这有利于组织代码，把某些应该属于某个类的函数给放到那个类里去，同时有利于命名空间的整洁。
+
+
+
+既然@staticmethod和@classmethod都可以直接类名.方法名()来调用，那他们有什么区别呢
+
+从它们的使用上来看,
+@staticmethod不需要表示自身对象的self和自身类的cls参数，就跟使用函数一样。
+@classmethod也不需要self参数，但第一个参数需要是表示自身类的cls参数。
+如果在@staticmethod中要调用到这个类的一些属性方法，只能直接类名.属性名或类名.方法名。
+
+而@classmethod因为持有cls参数，可以来调用类的属性，类的方法，实例化对象等，避免硬编码
+class A(object):
+    bar = 1
+    def foo(self):
+        print 'foo'
+ 
+    @staticmethod
+    def static_foo():
+        print 'static_foo'
+        print A.bar
+ 
+    @classmethod
+    def class_foo(cls):
+        print 'class_foo'
+        print cls.bar
+        cls().foo()
+ 
+A.static_foo()
+A.class_foo()
+```
+
 75.Python 中的接口如何实现？
+
+```python
+#抽象类加抽象方法就等于面向对象编程中的接口
+from abc import ABCMeta,abstractmethod
+
+class interface(object):
+    __metaclass__ = ABCMeta #指定这是一个抽象类
+    @abstractmethod  #抽象方法
+    def Lee(self):
+        pass
+
+    def Marlon(self):
+        pass
+
+
+class RelalizeInterfaceLee(interface):#必须实现interface中的所有函数，否则会编译错误
+    def __init__(self):    
+        print '这是接口interface的实现'
+    def Lee(self):
+        print '实现Lee功能'        
+    def Marlon(self):
+        pass   
+```
 
 76.Python 中的反射了解么?
 
+```python
+通过字符串映射object对象的方法或者属性
+hasattr(obj,name_str): 判断objec是否有name_str这个方法或者属性
+getattr(obj,name_str): 获取object对象中与name_str同名的方法或者函数
+setattr(obj,name_str,value): 为object对象设置一个以name_str为名的value方法或者属性
+delattr(obj,name_str): 删除object对象中的name_str方法或者属性
+
+举个栗子
+import requests
+
+class Http(object):
+
+
+    def get(self,url):
+        res = requests.get(url)
+        response = res.text
+        return response
+
+    def post(self,url):
+        res = requests.post(url)
+        response = res.text
+        return response
+
+# 使用反射后
+url = "https://www.jianshu.com/u/14140bf8f6c7"
+method = input("请求方法>>>:")
+h = Http()
+
+if hasattr(h,method):
+    func = getattr(h,method)
+    res = func(url)
+    print(res)
+else:
+    print("你的请求方式有误...")
+```
+
 77.metaclass 作用？以及应用场景？
 
+```
+metaclass我没怎么用过，不能乱说误人子弟，可以看下这篇博文https://www.cnblogs.com/xybaby/p/7927407.html
+```
+
 78.hasattr() getattr() setattr()的用法
+
+```python
+hasattr(obj,name_str): 判断objec是否有name_str这个方法或者属性
+getattr(obj,name_str): 获取object对象中与name_str同名的方法或者函数
+setattr(obj,name_str,value): 为object对象设置一个以name_str为名的value方法或者属性
+delattr(obj,name_str): 删除object对象中的name_str方法或者属性
+```
 
 79.请列举你知道的 Python 的魔法方法及用途。
 
