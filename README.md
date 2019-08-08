@@ -278,6 +278,7 @@ re.match(r'[+-]?\d+$',a)
 ```python
 s = 'ilovechina'
 x = list(s)
+x.reverse()
 ''.join(x)
 ```
 
