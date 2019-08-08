@@ -846,21 +846,109 @@ delattr(obj,name_str): 删除object对象中的name_str方法或者属性
 
 79.请列举你知道的 Python 的魔法方法及用途。
 
+```
+1. __call__:允许一个类的实例像函数一样被调用。实质上说，这意味着 x() 与 x._call_() 是相同的
+2.__init__:显示初始化属性
+3.__str__,__repr__,定义类的时候，重写这两个方法可以让类更清晰
+再就是__setattr__,__getattr__,__delattr__等等
+```
+
 80.如何知道一个 Python 对象的类型？
+
+```
+type(obj)
+```
 
 81.Python 的传参是传值还是传址？
 
+```
+说传值或者传引用都不准确。非要安一个确切的叫法的话，叫传对象（call by object）
+具体可以参考这篇文章：https://foofish.net/python-function-args.html
+```
+
 82.Python 中的元类(metaclass)使用举例
+
+```
+参考77.
+```
 
 83.简述 any()和 all()方法
 
+```python
+#any(x)判断x对象是否为空对象，如果都为空、0、false，则返回false，如果不都为空、0、false，则返回true
+
+#all(x)如果all(x)参数x对象的所有元素不为0、''、False或者x为空对象，则返回True，否则返回False
+>>> any('123')
+True
+>>> any([0,1])
+True
+>>> any([0,'0',''])
+True
+>>> any([0,''])
+False
+>>> any([0,'','false'])
+True
+>>> any([0,'',bool('false')])
+True
+>>> any([0,'',False])
+False
+>>> any(('a','b','c'))
+True
+>>> any(('a','b',''))
+True
+>>> any((0,False,''))
+False
+>>> any([])
+False
+>>> any(())
+False
+>>> all(['a', 'b', 'c', 'd'])  #列表list，
+True
+>>> all(['a', 'b', 'c', 'd'])  #列表list，元素都不为空或0
+True
+>>> all(['a', 'b', '', 'd'])  #列表list，存在一个为空的元素
+False
+>>> all([0, 1,2, 3])  #列表list，存在一个为0的元素
+False
+>>> all(('a', 'b', 'c', 'd'))  #元组tuple，元素都不为空或0
+True
+>>> all(('a', 'b', '', 'd'))  #元组tuple，存在一个为空的元素
+False
+>>> all((0, 1,2, 3))  #元组tuple，存在一个为0的元素
+False
+>>> all([]) # 空列表
+True
+>>> all(()) # 空元组
+True
+>>> #注意：空元组、空列表返回值为True，这里要特别注意
+```
+
 84.filter 方法求出列表所有奇数并构造新列表，a =  [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+```python
+list(filter(lambda x: x%2==1,a))
+```
 
 85.什么是猴子补丁？
 
+```markdown
+猴子补丁是一个概念，不是python中发明的，其他动态语言也有这么个概念。 《松本行弘的程序世界》这本书，里面专门有一章讲了猴子补丁的设计，所谓的猴子补丁的含义是指在动态语言中，不去改变源码而对功能进行追加和变更
+```
+
 86.在 Python 中是如何管理内存的？
 
+```
+参考71.
+```
+
 87.当退出 Python 时是否释放所有内存分配？
+
+```
+答案是否定的。那些具有对象循环引用或者全局命名空间引用的变量，在 Python 退出是往往不会被释放
+
+另外不会释放 C 库保留的部分内容。
+```
+
 
 ### 正则表达式
 
