@@ -1258,37 +1258,175 @@ a,b = 1,2
 
 ### 算法和数据结构
 
-122.已知：
+122.*已知：*
 
 ```Python
 AList = [1,2,3]
 BSet = {1,2,3}
 ```
 
-(1) 从 AList 和 BSet 中 查找 4，最坏时间复杂度那个大？
+(1) *从 AList 和 BSet 中 查找 4，最坏时间复杂度那个大？*
 
-(2) 从 AList 和 BSet 中 插入 4，最坏时间复杂度那个大？
+```
+查找列表最坏时间复杂度是O(n),查找字典是O(1)，因为字典的数据结构是散列表
+```
 
-123.用 Python 实现一个二分查找的函数
+(2) *从 AList 和 BSet 中 插入 4，最坏时间复杂度那个大？*
 
-124.python 单例模式的实现方法
+```
+插入的操作都是O(1)
+```
 
-125.使用 Python 实现一个斐波那契数列
+123.*用 Python 实现一个二分查找的函数*
 
-126.找出列表中的重复数字
+```python
+def binary_search(item,arr):
+    start = 0
+    end = len(arr) - 1
+    while start < end:
+        mid = (start + end) // 2
+        if item = arr[mid]:
+            return True
+        elif item < arr[mid]:
+            end = mid - 1
+        else:
+            start = mid + 1
+array = [1,2,3,4,5,6]
+print(binary_search(2,array))
+```
 
-127.找出列表中的单个数字
+124.*python 单例模式的实现方法*
 
-128.写一个冒泡排序
+```python
+单例模式（Singleton Pattern）是一种常用的软件设计模式，该模式的主要目的是确保某一个类只有一个实例存在。当你希望在整个系统中，某个类只能出现一个实例时，单例对象就能派上用场。
 
-129.写一个快速排序
+比如，某个服务器程序的配置信息存放在一个文件中，客户端通过一个 AppConfig 的类来读取配置文件的信息。如果在程序运行期间，有很多地方都需要使用配置文件的内容，也就是说，很多地方都需要创建 AppConfig 对象的实例，这就导致系统中存在多个 AppConfig 的实例对象，而这样会严重浪费内存资源，尤其是在配置文件内容很多的情况下。事实上，类似 AppConfig 这样的类，我们希望在程序运行期间只存在一个实例对象
+1.使用装饰器实现单例模式
+def singleton(cls):
+    _instance = {}
+    def _singleton(*args,**kargs):
+        if cls not in _instance:
+            _instance[cls] = cls(*args,**args)
+        return _instance[cls]
+    return _singleton
+  
+2.使用类实现单例模式
+import threading
+class Singleton(object):
+    _instance_lock = threading.Lock()
+
+    def __init__(self):
+        pass
+
+
+    def __new__(cls, *args, **kwargs):
+        if not hasattr(Singleton, "_instance"):
+            with Singleton._instance_lock:
+                if not hasattr(Singleton, "_instance"):
+                    Singleton._instance = object.__new__(cls)  
+        return Singleton._instanc
+```
+
+125.*使用 Python 实现一个斐波那契数列*
+
+```Python
+# 很多人上来就写下面这种解法
+def fibnaqie(n):
+    if n < 2:
+        return n
+    return fibnaqie(n - 1) + fibnaqie(n - 2)
+# 这种解法时间复杂度高，而且一般不是面试官最想要的答案
+
+# 下面这种优化的版本
+def fib2(n):
+    fib_n = 0
+    fib_one = 1
+    fib_two = 0
+    res = [0, 1]
+    if n < 2:
+        return res[n]
+    for i in range(2, n + 1):
+        fib_n = fib_one + fib_two
+        fib_two = fib_one
+        fib_one = fib_n
+    return fib_n
+# 所以适当地选择递归还是迭代，要看具体情况，处理树，或者图的遍历的时候，递归还是比迭代优先考虑的
+```
+
+126.*找出列表中的重复数字*
+
+```python
+def find_duplicate(arr):
+    not_dup = set()
+    dup = set()
+    for x in arr:
+        if x not in not_dup:
+            not_dup.add(x)
+        else:
+            dup.add(x)
+    return dup
+
+
+if __name__ == '__main__':
+    array = [1, 2, 3, 4, 4, 4, 4]
+    print(find_duplicate(array))
+```
+
+127.*找出列表中的单个数字*
+
+```python
+a = ['a', 1, 2, 'b']
+for x in a:
+    if str(x).isdigit():
+        print(x)
+```
+
+128.*写一个冒泡排序*
+
+```python
+def bubble_sort(arr):
+    n = len(arr)
+    if len(arr) < 2:
+        return arr
+    for i in range(n - 1):
+        count = 0
+        for j in range(n - i - 1):
+            if arr[j] > arr[j + 1]:
+                arr[j], arr[j + 1] = arr[j + 1], arr[j]
+                count += 1
+        if count == 0:
+            return arr
+    return arr
+
+
+if __name__ == '__main__':
+    arr = [2, 1, 5, 3, 6]
+    arr1 = [1, 2, 3, 4, 5]
+    print(bubble_sort(arr1))
+```
+
+129.*写一个快速排序*
+
+```python
+def quick_sort(arr):
+    if len(arr) < 2:
+        return arr
+    else:
+        pivot = arr[0]
+        less = [i for i in arr[1:] if i <= pivot]
+        more = [i for i in arr[1:] if i > pivot]
+    return quick_sort(less) + [pivot] + quick_sort(more)
+
+
+if __name__ == '__main__':
+    array = [2, 1, 6, 3, 4, 5]
+    print(quick_sort(array))
+
+```
 
 130.写一个拓扑排序
-
 131.python 实现一个二进制计算
-
 132.有一组“+”和“-”符号，要求将“+”排到左边，“-”排到右边，写出具体的实现方法。
-
 133.单链表反转
 
 134.交叉链表求交点
