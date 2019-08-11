@@ -1616,7 +1616,50 @@ for i in range(5):
 
 136.找出数据流的中位数
 
+```python
+# 中位数是有序列表中间的数。如果列表长度是偶数，中位数则是中间两个数的平均值
+# 如果是奇数，则中位数就是中间的数字
+def find_zhongwei(arr):
+    arr.sort()
+    if len(ar) == 0:
+        return
+    if len(ar) == 1:
+        return ar[0]
+    mid = len(arr) // 2
+    if len(arr) % 2 == 0:
+        return (arr[mid - 1] + arr[len(arr) / 2]) / 2
+    else:
+        return arr[mid]
+
+
+if __name__ == '__main__':
+    ar = [2, 1, 5, 3, 4]
+    print(find_zhongwei(ar))
+
+```
+
 137.二叉搜索树中第 K 小的元素
+
+```python
+# 问题本质：对二叉树进行中序遍历，中序排序后，返回第K-1个值
+class Solution(object):
+    def kthSmallest(self, root, k):
+        """
+        :type root: TreeNode
+        :type k: int
+        :rtype: int
+        """
+        def inorderTraversal(root):
+            if root is None:
+                return []
+            res = []
+            res.extend(inorderTraversal(root.left))
+            res.append(root.val)
+            res.extend(inorderTraversal(root.right))
+            return res
+        return inorderTraversal(root)[k - 1]
+
+```
 
 ### 爬虫相关
 
