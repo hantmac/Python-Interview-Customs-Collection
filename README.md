@@ -1283,9 +1283,9 @@ BSet = {1,2,3}
 def binary_search(item,arr):
     start = 0
     end = len(arr) - 1
-    while start < end:
+    while start <= end:
         mid = (start + end) // 2
-        if item = arr[mid]:
+        if item == arr[mid]:
             return True
         elif item < arr[mid]:
             end = mid - 1
