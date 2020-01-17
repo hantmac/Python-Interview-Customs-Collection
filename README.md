@@ -17,7 +17,7 @@ Table of Contents
       * [<strong>二.编码规范</strong>](#二编码规范)
          * [7.什么是 PEP8？](#7什么是-pep8)
          * [8.了解 Python 之禅吗？](#8了解-python-之禅吗)
-         * [9.了解 dosctring 吗？](#9了解-dosctring-吗)
+         * [9.了解 docstring 吗？](#9了解-docstring-吗)
          * [10.了解类型注解吗？](#10了解类型注解吗)
          * [11.例举你知道 Python 对象的命名规范，例如方法或者类等。](#11例举你知道-python-对象的命名规范例如方法或者类等)
          * [12.Python 中的注释有几种？](#12python-中的注释有几种)
@@ -332,7 +332,7 @@ https://www.python.org/dev/peps/pep-0008/
 import this
 ```
 
-#### 9.了解 dosctring 吗？
+#### 9.了解 docstring 吗？
 
 ```markdown
 Python有一个很奇妙的特性，称为 文档字符串 ，它通常被简称为 docstrings 。DocStrings是一个重要的工具，由于它帮助你的程序文档更加简单易懂，你应该尽量使用它。你甚至可以在程序运行的时候，从函数恢复文档字符串。
