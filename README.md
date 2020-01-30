@@ -1,6 +1,6 @@
 # python-面试通关宝典
 秋招的小伙伴，有面Python开发方向的，看这一个repo就够啦😘
-
+（ps:也欢迎大家贡献面试中遇到的Python相关问题，不断丰富这个repo以帮助到更多的人✿✿ヽ(°▽°)ノ✿）
 
 
 Table of Contents
