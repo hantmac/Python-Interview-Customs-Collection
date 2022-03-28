@@ -448,7 +448,7 @@ Python3 的六个标准数据类型中：
 
 ```python
 z = 'hello world'
-[s.capitalize() for s in z.split(' ')]
+z.title()
 ```
 
 #### 22.如何检测字符串中只含有数字？
@@ -467,9 +467,7 @@ re.match(r'[+-]?\d+$',a)
 
 ```python
 s = 'ilovechina'
-x = list(s)
-x.reverse()
-''.join(x)
+s = s[::-1]
 ```
 
 #### 24.Python 中的字符串格式化方式你知道哪些？
@@ -528,7 +526,7 @@ b.lower()
 ```python
 s = 'hello'
 s= "hello"
-单引号与双引号没有区别，
+双引号可以包含单引号字符，单引号无法包含双引号字符
 三引号可以用来加注释，所加注释可以使用__doc__查看
 ```
 
@@ -1222,7 +1220,7 @@ res = 'test True' if expression is True else 'test False'
 ```python
 # 遍历列表时候，携带索引index
 a = ['a','b','c']
-for index,item in a:
+for index,item in enumerate(a):
     print(index,item)
 ```
 
